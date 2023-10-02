@@ -28,7 +28,7 @@ class Game:
         the main program loop
         :return:
         '''
-        while self.PLAYER1.getScore()<10000 and self.PLAYER1.getScore()<10000:
+        while self.PLAYER1.getScore() < 10000 and self.PLAYER1.getScore() < 10000:
             # --- PLAYER 1 --- #
             print("Player 1's Turn")
             TURN = 0
