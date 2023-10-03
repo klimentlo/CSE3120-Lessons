@@ -37,3 +37,12 @@ DIE_1 = Die(6)
 print(DIE_1.getRoll()) # print a number between 1 and 6
 DIE_2 = Die(20) 
 ```
+
+An __Object__ is a unique set of data and functions instantiated from a class. An object accesses attributes and methods using _dot notation_, which identifies the object, then the attributes or method.
+
+```
+<object name>.<attribute name> --> Value
+<object name>.<method name>(arguments) --> perform the method
+```
+
+Object are separate entities from each other. Once created, if one object changes attributes values, it does not change values for other objects created by the same class.
