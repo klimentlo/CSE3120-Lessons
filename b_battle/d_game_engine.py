@@ -29,8 +29,6 @@ class Game:
             ROUNDS += 1
             pass
 
-    def checkWin(self):
-        if self.
 
 if __name__ == "__main__":
     GAME = Game() # Current Attributes of GAME: (__PLAYER1(__NAME,__HAND) ) (__PLAYER2(__NAME,__HAND)) (__DECK(52 long array))
