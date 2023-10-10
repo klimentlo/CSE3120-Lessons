@@ -1,35 +1,36 @@
-#b_deck.py in b_battle (folder)
-'''
+# b_deck.py in b_battle (folder)
+"""
 title: deck class
 author: kliment lo
-date-created:2023/10/04
-'''
+date-created: 2023-10-02
+"""
+
 from a_card import Card
 from random import shuffle
+
 class Deck:
-    '''
-    create a deck of 52 playing cards and interact with individual cards
-    '''
+    """
+    Create a deck of 52 playing cards and interact with individual cards
+    """
 
     def __init__(self):
         self.__DECK = []
-        for i in range(1,5):
-            for j in range(1,14):
-                self.__DECK.append(Card(i,j))
+        for i in range(1, 5):
+            for j in range(1, 14):
+                self.__DECK.append(Card(i, j))
 
     # --- MODIFIER --- #
     def shuffleDeck(self):
-        '''
-        shuffles the cards in the deck
-        '''
+        """
+        shuffles the cards in the deck.
+        """
         shuffle(self.__DECK)
 
     def drawCard(self):
-        '''
+        """
         return the top card of the deck
-        :return:
-        '''
-        if len(self.__DECK) > 0:
+        """
+        if len(self.__DECK)> 0:
             return self.__DECK.pop(0)
 
     # --- ACCESSOR METHODS --- #

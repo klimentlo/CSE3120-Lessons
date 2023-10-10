@@ -1,14 +1,14 @@
-#c_player.py in b_battle
-'''
+# c_player.py in b_battle
+"""
 title: player class
 author: kliment lo
-date-created: 2023/10/05
-'''
+date-created: 2023-10-02
+"""
 
 class Player:
-    '''
+    """
     Player class for the game Battle
-    '''
+    """
 
     def __init__(self, NAME):
         self.__NAME = NAME
@@ -16,18 +16,16 @@ class Player:
 
     # --- MODIFIER --- #
     def takeCard(self, CARD):
-        '''
+        """
         adds a card to the hand
         :param CARD: object - Card
-        :return:
-        '''
+        """
         self.__HAND.append(CARD)
 
     def giveCard(self):
-        '''
+        """
         take the top card from the hand
-        :return:
-        '''
+        """
         if len(self.__HAND) > 0:
             return self.__HAND.pop(0)
 
@@ -41,13 +39,16 @@ class Player:
         else:
             return True
 
+    def getHandSize(self):
+        return len(self.__HAND)
+
 if __name__ == "__main__":
     from b_deck import Deck
 
     DECK = Deck()
     DECK.shuffleDeck()
 
-    PLAYER1 = Player("Mr.Zhang")
+    PLAYER1 = Player("Mr. Zhang")
     PLAYER2 = Player("Mr. Patterson")
 
     for i in range(26):
