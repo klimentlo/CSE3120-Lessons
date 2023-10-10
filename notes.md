@@ -46,3 +46,19 @@ An __Object__ is a unique set of data and functions instantiated from a class. A
 ```
 
 Object are separate entities from each other. Once created, if one object changes attributes values, it does not change values for other objects created by the same class.
+
+## Unified Modeling Language
+A standardized modeling language that unifies notational systems and approaches for data management and software design. UML focuses on managing _data_ and grouping that data together. It is composed of three main diagram types: structure, behaviour, and interactions. 
+
+NOTE: While software developers require knowledge of all three types, this course will only focus on structure UML tables.
+
+A Class diagram is a common structure UML diagram. It contains the name, the class, the attributes, and the methods of the class. 
+
+| Bank Account ||
+| --- | --- |
+| _Attribute_ | _dataType_ |
+| accountNo | int |
+| balance | float |
+| _Methods(param)_ | return |
+| deposit(float) | none |
+| getBalance() | float |
