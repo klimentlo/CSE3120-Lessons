@@ -31,16 +31,19 @@ class Game:
             if randrange(2) == 1:
                 print(f"{self.__ATTACKING_PKMN} uses {self.__ATTACKING_PKMN.getTechniqueName(ATTACKING_MOVE)}")
                 self.__DEFENDING_PKMN.takeDamage(ATTACKING_DAMAGE)
-                if not self.__DEFENDING_PKMN.isFainted()
+                if not self.__DEFENDING_PKMN.isFainted():
                     print(f"{self.__DEFENDING_PKMN} uses {self.__DEFENDING_PKMN.getTechniqueName(DEFENDING_MOVE)}")
                     self.__ATTACKING_PKMN.takeDamage(DEFENDING_DAMAGE)
                 else:
-                    print()
+                    print(f"{self.__DEFENDING_PKMN} fainted! ")
             else:
                 print(f"{self.__DEFENDING_PKMN} uses {self.__DEFENDING_PKMN.getTechniqueName(DEFENDING_MOVE)}")
                 self.__ATTACKING_PKMN.takeDamage(DEFENDING_DAMAGE)
-                print(f"{self.__ATTACKING_PKMN} uses {self.__ATTACKING_PKMN.getTechniqueName(ATTACKING_MOVE)}")
-                self.__DEFENDING_PKMN.takeDamage(ATTACKING_DAMAGE)
+                if not self.__ATTACKING_PKMN.isFainted():
+                    print(f"{self.__ATTACKING_PKMN} uses {self.__ATTACKING_PKMN.getTechniqueName(ATTACKING_MOVE)}")
+                    self.__DEFENDING_PKMN.takeDamage(ATTACKING_DAMAGE)
+                else:
+                    print(f"{self.__ATTACKING_PKMN} fainted! ")
             print(f"{self.__ATTACKING_PKMN} HP remaining: {self.__ATTACKING_PKMN.getHP()}")
             print(f"{self.__DEFENDING_PKMN} HP remaining: {self.__DEFENDING_PKMN.getHP()}")
 

@@ -77,7 +77,7 @@ class Pokemon:
 
     def isFainted(self):
         if self.__HP == 0:
-            return FALSE
+            return True
         else:
             return False
 
