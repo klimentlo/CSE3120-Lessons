@@ -26,12 +26,67 @@ class Pokemon:
             self.__TECHNIQUES.append(TECNIQUE)
 
     def takeDamage(self, DAMAGE):
-        self.__HP -=
+        self.__HP -= DAMAGE
+        if self.__HP < 0:
+            HP = 0
+
+
     # ACCESSOR METHODS (Getter Methods)
     def __str__(self):
         return self.__NAME
 
+    def chooseTechnique(self):
+        '''
+        provide a menu for the trainer to select a move
+        :return:
+        '''
+        print(f"Select a move for {self.__NAME}")
+        for i in range(len(self.__TECHNIQUES)):
+            print(f"{i + 1}. {self.__TECHNIQUES[i]}")
+        CHOICE = int(input("> "))
+        CHOICE -= 1
+        return CHOICE
+
+    def calcDamage(self, MOVE_SELECTED,ENEMY_POKEMON_TYPE):
+        '''
+        calculate the damage of the pokemon's move
+        :param MOVE_SELECTED: int - > index for the selected move
+        :param ENEMY_POKEMON_TYPE:  str
+        :return:
+        '''
+        MOVE_DAMAGE = self.__TECHNIQUES[MOVE_SELECTED].getDamage()
+        if ENEMY_POKEMON_TYPE == self.__TYPE.getResistance():
+            MOVE_DAMAGE = MOVE_DAMAGE // 2
+        elif ENEMY_POKEMON_TYPE == self.__TYPE.getWeakness():
+            MOVE_DAMAGE = MOVE_DAMAGE * 2
+        return MOVE_DAMAGE
+
+    def getType(self):
+        return str(self.__TYPE)
+
+    def getTechniqueName(self, INDEX):
+        '''
+        returns the name of the technique at index INDEX
+        :param INDEX: int
+        :return: str
+        '''
+        return str(self.__TECHNIQUES[INDEX])
+
+    def getHP(self):
+        return self.__HP
+
+    def isFainted(self):
+        if self.__HP == 0:
+            return FALSE
+        else:
+            return False
+
 if __name__ == "__main__":
-    from my_type import GRASS
+    from my_type import GRASS, FIRE, WATER
+    from technique import moveSet
     SPRIG = Pokemon("Sprigatito", 25, GRASS)
-    print(SPRIG)
+    SPRIG.addTechnique(moveSet["vine whip"])
+    SPRIG.addTechnique(moveSet["tackle"])
+    MOVE = SPRIG.chooseTechnique()
+    DAMAGE = SPRIG.calcDamage(MOVE, str(FIRE))
+    print(MOVE, DAMAGE)
