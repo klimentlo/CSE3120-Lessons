@@ -1,9 +1,4 @@
-#game_engine.py in c_pokemon_battle (folder)
-'''
-title: runs the pokemon battle
-author: kliment lo
-date-created: 2023-10-12
-'''
+# game_engine.py in c_pokemon_battle (folder)
 
 from pokemon import Pokemon
 from technique import moveSet
@@ -35,7 +30,7 @@ class Game:
                     print(f"{self.__DEFENDING_PKMN} uses {self.__DEFENDING_PKMN.getTechniqueName(DEFENDING_MOVE)}")
                     self.__ATTACKING_PKMN.takeDamage(DEFENDING_DAMAGE)
                 else:
-                    print(f"{self.__DEFENDING_PKMN} fainted! ")
+                    print(f"{self.__DEFENDING_PKMN} feinted!")
             else:
                 print(f"{self.__DEFENDING_PKMN} uses {self.__DEFENDING_PKMN.getTechniqueName(DEFENDING_MOVE)}")
                 self.__ATTACKING_PKMN.takeDamage(DEFENDING_DAMAGE)
@@ -43,7 +38,7 @@ class Game:
                     print(f"{self.__ATTACKING_PKMN} uses {self.__ATTACKING_PKMN.getTechniqueName(ATTACKING_MOVE)}")
                     self.__DEFENDING_PKMN.takeDamage(ATTACKING_DAMAGE)
                 else:
-                    print(f"{self.__ATTACKING_PKMN} fainted! ")
+                    print(f"{self.__ATTACKING_PKMN} feinted!")
             print(f"{self.__ATTACKING_PKMN} HP remaining: {self.__ATTACKING_PKMN.getHP()}")
             print(f"{self.__DEFENDING_PKMN} HP remaining: {self.__DEFENDING_PKMN.getHP()}")
 
